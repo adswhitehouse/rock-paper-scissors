@@ -10,16 +10,12 @@ function getComputerChoice() {
   return choiceComp;
 }
 
-// console.log(getComputerChoice())
-
 function getHumanChoice() {
   let choiceHuman = prompt(
     "Please enter either 'rock', 'paper' or 'scissors' to play."
   ).toLowerCase();
   return choiceHuman;
 }
-
-// console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
@@ -28,27 +24,46 @@ function playRound(humanChoice, computerChoice) {
   if (humanChoice == "rock" && computerChoice == "paper") {
     computerScore++;
     console.log("YOU LOSE! Paper beats rock.");
-  } else if (humanScore == "rock" && computerScore == "scissors") {
+  } else if (humanChoice == "rock" && computerChoice == "scissors") {
     humanScore++;
     console.log("YOU WIN! Rock beats scissors.");
   } else if (humanChoice == "paper" && computerChoice == "scissors") {
     computerScore++;
     console.log("YOU LOSE! Scissors beats paper.");
-  } else if((humanChoice == "paper") && (computerChoice == "rock")) {
+  } else if (humanChoice == "paper" && computerChoice == "rock") {
     humanScore++;
     console.log("YOU WIN! Paper beats rock");
-  } else if((humanChoice == "scissors") && (computerChoice == "rock")) {
+  } else if (humanChoice == "scissors" && computerChoice == "rock") {
     computerScore++;
     console.log("YOU LOSE! Rock beats scissors");
-  } else if((humanChoice == "scissors") && (computerChoice == "paper")) {
+  } else if (humanChoice == "scissors" && computerChoice == "paper") {
     humanScore++;
-    console.log("YOU WIN! Scissors beats paper")
+    console.log("YOU WIN! Scissors beats paper");
   } else {
     console.log("It's a DRAW!");
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
 
-playRound(humanSelection, computerSelection)
+  if (humanScore > computerScore) {
+    console.log(
+      `You won against the computer in a best of 5 game! The results are ${humanScore} to you and ${computerScore} to the computer.`
+    );
+  } else if (computerScore > humanScore) {
+    console.log(
+      `You lost to the computer in a best of 5 game! The results are ${computerScore} to the computer and ${humanScore} to you.`
+    );
+  } else if (humanScore == computerScore) {
+    console.log(
+      `You drew with the computer in a best of 5 game! You both scored ${humanScore} points.`
+    );
+  }
+}
+
+playGame();
