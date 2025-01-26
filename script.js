@@ -43,7 +43,9 @@ function playRound(humanChoice, computerChoice) {
     console.log("It's a DRAW!");
   } else {
     computerScore++;
-    console.log("Please input a valid choice.");
+    console.log(
+      "Please only input a valid choice of rock, paper of scissors. Computer wins this round."
+    );
   }
 }
 
