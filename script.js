@@ -4,7 +4,7 @@ function getComputerChoice() {
     choiceComp = "rock";
   } else if (choiceComp == 2) {
     choiceComp = "paper";
-  } else {
+  } else if (choiceComp == 3) {
     choiceComp = "scissors";
   }
   return choiceComp;
@@ -39,8 +39,11 @@ function playRound(humanChoice, computerChoice) {
   } else if (humanChoice == "scissors" && computerChoice == "paper") {
     humanScore++;
     console.log("YOU WIN! Scissors beats paper");
-  } else {
+  } else if (humanChoice == computerChoice) {
     console.log("It's a DRAW!");
+  } else {
+    computerScore++;
+    console.log("Please input a valid choice.");
   }
 }
 
