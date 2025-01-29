@@ -1,0 +1,108 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+/* CSS Reset */
+
+html {
+  font-family: "IBM Plex Mono", serif;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  border: 0.5rem solid black;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 50%;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  flex: 1 1 150px;
+  width: 100px;
+  background-color: lightgrey;
+  transition: border 1s ease-out;
+}
+
+.btn:active {
+  border: 2px solid yellow;
+  transition: none;
+}
+
+.choices {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: bold;
+}
+
+.announcement {
+  align-self: flex-start;
+}

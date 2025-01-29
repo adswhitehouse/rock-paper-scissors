@@ -10,15 +10,25 @@ function getComputerChoice() {
   return choiceComp;
 }
 
-function getHumanChoice() {
-  let choiceHuman = prompt(
-    "Please enter either 'rock', 'paper' or 'scissors' to play."
-  ).toLowerCase();
-  return choiceHuman;
-}
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector("scissors");
 
-let humanScore = 0;
-let computerScore = 0;
+const roundResult = document.querySelector(".announcement")
+const playerScore = document.querySelector(".playerScore")
+const computerScore = document.querySelector(".computerScore")
+
+
+
+// function getHumanChoice() {
+//   let choiceHuman = prompt(
+//     "Please enter either 'rock', 'paper' or 'scissors' to play."
+//   ).toLowerCase();
+//   return choiceHuman;
+// }
+
+// let humanScore = 0;
+// let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice == "rock" && computerChoice == "paper") {
@@ -46,26 +56,26 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  for (let i = 0; i < 5; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-  }
+// function playGame() {
+//   for (let i = 0; i < 5; i++) {
+//     const humanSelection = getHumanChoice();
+//     const computerSelection = getComputerChoice();
+//     playRound(humanSelection, computerSelection);
+//   }
 
-  if (humanScore > computerScore) {
-    console.log(
-      `You won against the computer in a best of 5 game! The results are ${humanScore} to you and ${computerScore} to the computer.`
-    );
-  } else if (computerScore > humanScore) {
-    console.log(
-      `You lost to the computer in a best of 5 game! The results are ${computerScore} to the computer and ${humanScore} to you.`
-    );
-  } else if (humanScore == computerScore) {
-    console.log(
-      `You drew with the computer in a best of 5 game! You both scored ${humanScore} points.`
-    );
-  }
-}
+//   if (humanScore > computerScore) {
+//     console.log(
+//       `You won against the computer in a best of 5 game! The results are ${humanScore} to you and ${computerScore} to the computer.`
+//     );
+//   } else if (computerScore > humanScore) {
+//     console.log(
+//       `You lost to the computer in a best of 5 game! The results are ${computerScore} to the computer and ${humanScore} to you.`
+//     );
+//   } else if (humanScore == computerScore) {
+//     console.log(
+//       `You drew with the computer in a best of 5 game! You both scored ${humanScore} points.`
+//     );
+//   }
+// }
 
-playGame();
+// playGame();
