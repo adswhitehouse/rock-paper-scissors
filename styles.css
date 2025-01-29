@@ -56,6 +56,10 @@ html {
   font-family: "IBM Plex Mono", serif;
 }
 
+body {
+  background-color: lightgray;
+}
+
 .game {
   display: flex;
   justify-content: center;
@@ -69,6 +73,7 @@ html {
   padding: 1rem;
   border-radius: 0.5rem;
   width: 50%;
+  background-color: #fff;
 }
 
 .btn {
@@ -81,6 +86,7 @@ html {
   width: 100px;
   background-color: lightgrey;
   transition: border 1s ease-out;
+  box-shadow: 0 2px 2px 0;
 }
 
 .btn:active {

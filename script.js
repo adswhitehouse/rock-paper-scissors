@@ -17,6 +17,9 @@ const scissors = document.querySelector(".scissors");
 let humanChoice = "";
 let computerChoice = "";
 
+let playerPoints = 0;
+let computerPoints = 0;
+
 rock.addEventListener("click", () => {
   computerChoice = getComputerChoice();
   humanChoice = "rock";
@@ -40,20 +43,44 @@ const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
 
 function playRound(human, computer) {
-  if (human == computer) {
+  if (playerPoints == 5) {
+    roundResult.textContent = `You win the game!`;
+    playerScore.textContent = `Player Score: `;
+    computerScore.textContent = `Computer Score: `;
+    playerPoints = 0;
+    computerPoints = 0;
+  } else if (computerPoints == 5) {
+    roundResult.textContent = `Computer wins the game!`;
+    playerScore.textContent = `Player Score: `;
+    computerScore.textContent = `Computer Score: `;
+    playerPoints = 0;
+    computerPoints = 0;
+  } else if (human == computer) {
     roundResult.textContent = `It's a draw! You both chose ${human}.`;
   } else if (human == "rock" && computer == "scissors") {
     roundResult.textContent = `You win! Computer chose scissors.`;
+    playerPoints++;
+    playerScore.textContent = `Player Score: ` + playerPoints.toString();
   } else if (human == "rock" && computer == "paper") {
     roundResult.textContent = `You lose! Computer chose paper.`;
+    computerPoints++;
+    computerScore.textContent = `Computer Score: ` + computerPoints.toString();
   } else if (human == "paper" && computer == "rock") {
     roundResult.textContent = `You win! Computer chose rock.`;
+    playerPoints++;
+    playerScore.textContent = `Player Score: ` + playerPoints.toString();
   } else if (human == "paper" && computer == "scissors") {
     roundResult.textContent = `You lose! Computer chose scissors`;
+    computerPoints++;
+    computerScore.textContent = `Computer Score: ` + computerPoints.toString();
   } else if (human == "scissors" && computer == "paper") {
     roundResult.textContent = `You win! Computer chose paper`;
+    playerPoints++;
+    playerScore.textContent = `Player Score: ` + playerPoints.toString();
   } else if (human == "scissors" && computer == "rock") {
     roundResult.textContent = `You lose! Computer chose rock.`;
+    computerPoints++;
+    computerScore.textContent = `Computer Score: ` + computerPoints.toString();
   }
 }
 
