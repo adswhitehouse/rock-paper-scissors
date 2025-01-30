@@ -94,4 +94,3 @@ function playRound(human, computer) {
     isScoreFive();
   }
 }
-
